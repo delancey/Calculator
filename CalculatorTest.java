@@ -23,5 +23,20 @@ public class CalculatorTest {
 
     }
 
+    @Test
+    public final void emptyStringReturnsZero(){
+        Assert.assertEquals(0, Calculator.add(""));
+    }
+
+    @Test
+    public final void oneNumberUsed(){
+        Assert.assertEquals(3, Calculator.add("3"));
+    }
+
+    @Test
+public final void twoNumbersUsedReturnSum(){
+    Assert.assertEquals(3+6, Calculator.add("3,6"));
+}
+
 
 }
