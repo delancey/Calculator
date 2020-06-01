@@ -45,5 +45,10 @@ public final void twoNumbersUsedReturnSum(){
     Assert.assertEquals(3+6, Calculator.add("3,6"));
 }
 
+@Test(expected = RuntimeException.class)
+public final void negativeNumberThrowsException(){
+    Calculator.add("3, -6, 9");
+}
+
 
 }

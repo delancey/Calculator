@@ -1,18 +1,30 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Calculator {
-    public static final int add(final String numbers){
+    public static int add(final String numbers){
         int returnValue = 0;
         String[] numbersArray = numbers.split(",");
+        List <Integer> negativeNumbers = new ArrayList<Integer>();
         // if(numbersArray.length >2){
         //     throw new RuntimeException("Up to 2 numbers separated by a comma (, ) are allowed");
         // } 
             //go through each number in array and convert to integer
         for (String number: numbersArray){
             if(!number.isEmpty()){
+                int numberInt = Integer.parseInt(number);
                 //converts number String to int, adds returnValue
-                returnValue += Integer.parseInt(number);
+                // returnValue += numberInt;
             //if not possible throw exception
-            }                 
-                   
+                if(numberInt < 0){
+                    negativeNumbers.add(numberInt);
+                }  else {
+                    returnValue += numberInt;
+                }            
+            }     
+        }
+        if (negativeNumbers.size() > 0){
+            throw new RuntimeException("Negatives are not allowed" + negativeNumbers.toString());
         }
         return returnValue;
         //returns 0(default value) if no items in array
