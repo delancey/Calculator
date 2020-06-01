@@ -18,7 +18,7 @@ public class Calculator {
             //if not possible throw exception
                 if(numberInt < 0){
                     negativeNumbers.add(numberInt);
-                }  else {
+                }  else if (numberInt <= 1000){
                     returnValue += numberInt;
                 }            
             }     

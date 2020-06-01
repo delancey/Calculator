@@ -50,5 +50,10 @@ public final void negativeNumberThrowsException(){
     Calculator.add("3, -6, 9");
 }
 
+@Test
+public final void numbersOver1000Ignored() {
+    Assert.assertEquals(1+2+1000, Calculator.add("1,2,1000,1001,1234"));
+}
+
 
 }
